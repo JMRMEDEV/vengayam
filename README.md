@@ -29,6 +29,10 @@ If you are intending to use a custom component inside of it, you have to append 
 
 https://github.com/JMRMEDEV/vengayam/blob/cb042d39fa795ad77d4b0006acd3dd2366327030/dashboard-component.js#L35
 
+**TODO:**
+
+1. Add icon to dahsboard section.
+
 ### WidgetWrapper
 
 Component to wrap the widgets to be used within the dashboard. It includes an attribute for a title, a shadow and attributes for dimensions.
@@ -45,6 +49,11 @@ For using it, you just  have to set children and reference children **`slot`** l
 </widget-wrapper>
 ```
 
+**TODO:** 
+
+1. Change attribute name from `name` to `title` or maybe `label`.
+2. Set functionality to gear icon.
+
 ### CashInCashOut
 
 Component that takes a JSON array as an attribute and display month graphics based on it. It can focus a specific month and show the scpecific quantities related to it. It sets a maximum and average values based on all the passed data for plotting the information.
@@ -52,6 +61,7 @@ Component that takes a JSON array as an attribute and display month graphics bas
 **TODO:** 
 
 1. Constraint min dimensions to avoid layout messing up.
+2. Filter the cash data by `account` (add `account` property to passed data).
 
 Example usage:
 
