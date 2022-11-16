@@ -52,7 +52,6 @@ Component that takes a JSON array as an attribute and display month graphics bas
 **TODO:** 
 
 1. Constraint min dimensions to avoid layout messing up.
-2. Setting case for the scenario where passed last month is not current month.
 
 Example usage:
 
