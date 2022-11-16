@@ -4,7 +4,7 @@ Project to be used inside of Harmony App, based on web components for reusabilit
 
 ## Current State
 
-![image](https://user-images.githubusercontent.com/58167190/202096047-9cb9c54e-7209-4dfb-ba71-b446490986fb.png)
+![image](https://user-images.githubusercontent.com/58167190/202170588-b3b46023-7868-426a-909e-927ee32de38d.png)
 
 ## Components
 
@@ -62,7 +62,6 @@ Component that takes a JSON array as an attribute and display month graphics bas
 
 1. Constraint min dimensions to avoid layout messing up.
 2. Filter the cash data by `account` (add `account` property to passed data).
-3. Add icon for no-data message.
 
 **Example usage:**
 
