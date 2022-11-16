@@ -14,7 +14,7 @@ Project to be used inside of Harmony App, based on web components for reusabilit
 
 ### DashboardComponent
 
-Main dashboard component. Made to display all the components that we want to embed. When you hover over the current dashboard section, change the style of it. Includes a Navbar with PST time. It can have two columns.
+Main dashboard component. Made to display all the components that we want to embed. When you hover over the current dashboard section, change the style of it. Includes a Navbar with PST time. It can has two columns.
 
 For using it, you just have two set children and reference the corresponding column **`slot`**, like this:
 
