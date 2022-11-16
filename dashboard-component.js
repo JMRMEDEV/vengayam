@@ -35,6 +35,18 @@ class DashboardComponent extends HTMLElement {
     loadScript("widgets/cash-in-cash-out.js");
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    const col0Nodes = this.shadowRoot.getElementById("column-0").querySelector("slot").assignedNodes();
+    const col1Nodes = this.shadowRoot.getElementById("column-1").querySelector("slot").assignedNodes();
+    // Verify if the slots got something inside of them, otherwise pupulate with nothing
+    // instead of showing fallback message
+    if (col0Nodes.length === 0) {
+      const col0Container = this.shadowRoot.getElementById("column-0");
+      col0Container.innerHTML = null;
+    }
+    if (col1Nodes.length === 0) {
+      const col1Container = this.shadowRoot.getElementById("column-1");
+      col1Container.innerHTML = null;
+    }
   }
 
   /**
@@ -81,10 +93,10 @@ class DashboardComponent extends HTMLElement {
         </div>
         <!-- Columns -->
         <div style="display: flex; flex-direction: row; height: 90%; align-items: flex-start;">    
-          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50%;">
+          <div id="column-0" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50%;">
             <slot name="column-0">Column 0 children</slot>
           </div>
-          <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50%;">
+          <div id="column-1" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50%;">
             <slot name="column-1">Column 1 children</slot>
           </div>
         </div>
