@@ -253,6 +253,7 @@ class CashInCashOut extends HTMLElement {
         }
       });
       const sortedData = [...filledMissingMonths];
+      console.log(sortedData);
       // Only render month graphics if data array is greater than 0
       if (sortedData.length > 0) {
         sortedData.forEach((dataEntry, index) => {
@@ -262,57 +263,65 @@ class CashInCashOut extends HTMLElement {
             index === sortedData.length - 1
           ) {
             // We should show at least one month graphic
-            month3.innerHTML = this.getMonthGraphic(dataEntry.month, dataEntry);
+            month3.innerHTML = this.getMonthGraphic(currentMonth, dataEntry);
             // We verify if we have data for the month prior to the current
-            if (
-              sortedData[index - 1] !== undefined &&
-              sortedData[index - 1] !== null
-            ) {
-              month2.innerHTML = this.getMonthGraphic(
-                dataEntry.month - 1,
-                sortedData[index - 1]
-              );
-            } else {
-              month2.innerHTML = this.getMonthGraphic(
-                dataEntry.month - 1,
-                undefined
-              );
-            }
-            // We verify if we have data for the month prior to the previous
-            if (
-              sortedData[index - 2] !== undefined &&
-              sortedData[index - 2] !== null
-            ) {
-              month1.innerHTML = this.getMonthGraphic(
-                dataEntry.month - 2,
-                sortedData[index - 2]
-              );
-            } else {
-              month1.innerHTML = this.getMonthGraphic(
-                dataEntry.month - 2,
-                undefined
-              );
-            }
+          } else {
+            month3.innerHTML = this.getMonthGraphic(currentMonth, undefined);
+          }
+          if (
+            sortedData[index - 1] !== undefined &&
+            sortedData[index - 1] !== null
+          ) {
+            month2.innerHTML = this.getMonthGraphic(
+              currentMonth- 1,
+              sortedData[index - 1]
+            );
+          } else {
+            month2.innerHTML = this.getMonthGraphic(
+              currentMonth - 1,
+              undefined
+            );
+          }
+          // We verify if we have data for the month prior to the previous
+          if (
+            sortedData[index - 2] !== undefined &&
+            sortedData[index - 2] !== null
+          ) {
+            month1.innerHTML = this.getMonthGraphic(
+              currentMonth - 2,
+              sortedData[index - 2]
+            );
+          } else {
+            month1.innerHTML = this.getMonthGraphic(
+              currentMonth - 2,
+              undefined
+            );
           }
         });
       }
       // Add event listeners for clicks, redraw the cash text content if selected
-      // month changed
+      // month changed (only do it if elements exist)
       const month3Graphic = month3.querySelector("#month-graphic");
-      month3Graphic.addEventListener("click", () => {
-        this.handleOnMonthClick(currentMonth);
-        cashTexts.innerHTML = this.setCashTextContent(data);
-      });
+      if (month3Graphic !== null) {
+        month3Graphic.addEventListener("click", () => {
+          this.handleOnMonthClick(currentMonth);
+          cashTexts.innerHTML = this.setCashTextContent(data);
+        });
+      }
       const month2Graphic = month2.querySelector("#month-graphic");
-      month2Graphic.addEventListener("click", () => {
-        this.handleOnMonthClick(currentMonth - 1);
-        cashTexts.innerHTML = this.setCashTextContent(data);
-      });
+      if (month3Graphic !== null) {
+        month2Graphic.addEventListener("click", () => {
+          this.handleOnMonthClick(currentMonth - 1);
+          cashTexts.innerHTML = this.setCashTextContent(data);
+        });
+      }
       const month1Graphic = month1.querySelector("#month-graphic");
-      month1Graphic.addEventListener("click", () => {
-        this.handleOnMonthClick(currentMonth - 2);
-        cashTexts.innerHTML = this.setCashTextContent(data);
-      });
+      if (month3Graphic !== null) {
+        month1Graphic.addEventListener("click", () => {
+          this.handleOnMonthClick(currentMonth - 2);
+          cashTexts.innerHTML = this.setCashTextContent(data);
+        });
+      }
     } else {
       cashGraphContainer.innerHTML = /*html*/ `
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
