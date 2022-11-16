@@ -22,6 +22,7 @@ const colors = {
   gray: {
     light: "#fafafa",
     darker: "#e0e0e0",
+    dark: "#6d6e6d",
   },
 };
 
