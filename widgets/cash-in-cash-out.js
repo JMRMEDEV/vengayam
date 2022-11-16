@@ -1,3 +1,8 @@
+const noDataIcon = /*html*/ `
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill=${colors.gray.dark} class="bi bi-list-ul" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg>`;
+
 class CashInCashOut extends HTMLElement {
   // Max and min values for using in the graphs
   maxCashValue = 0;
@@ -273,7 +278,7 @@ class CashInCashOut extends HTMLElement {
             sortedData[index - 1] !== null
           ) {
             month2.innerHTML = this.getMonthGraphic(
-              currentMonth- 1,
+              currentMonth - 1,
               sortedData[index - 1]
             );
           } else {
@@ -324,8 +329,9 @@ class CashInCashOut extends HTMLElement {
       }
     } else {
       cashGraphContainer.innerHTML = /*html*/ `
-        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-          <b>No cash movement yet</b>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: ${colors.gray.dark}">
+          ${noDataIcon}
+          <b style="padding-top: 10px;">No cash movement yet</b>
           <p>Once you have cash move in or out from your account, it will appear here.</p>
         </div>`;
     }
