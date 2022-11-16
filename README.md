@@ -56,7 +56,7 @@ For using it, you just  have to set children and reference children **`slot`** l
 
 ### CashInCashOut
 
-Component that takes a JSON array as an attribute and display month graphics based on it. It can focus a specific month and show the scpecific quantities related to it. It sets a maximum and average values based on all the passed data for plotting the information.
+Component that takes a JSON array as an attribute and display month graphics based on it. It can focus a specific month and show the specific quantities related to it. It sets a maximum and average values based on all the passed data for plotting the information.
 
 **TODO:** 
 
