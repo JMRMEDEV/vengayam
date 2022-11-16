@@ -16,7 +16,7 @@ Project to be used inside of Harmony App, based on web components for reusabilit
 
 Main dashboard component. Made to display all the components that we want to embed. When you hover over the current dashboard section, change the style of it. Includes a Navbar with PST time. It can have two columns.
 
-For using it, you just have two set children and reference the corresponding column `**slot**`, like this:
+For using it, you just have two set children and reference the corresponding column **`slot`**, like this:
 
 ```
 <dashboard-component>
@@ -33,7 +33,7 @@ https://github.com/JMRMEDEV/vengayam/blob/cb042d39fa795ad77d4b0006acd3dd23663270
 
 Component to wrap the widgets to be used within the dashboard. It includes an attribute for a title, a shadow and attributes for dimensions.
 
-For using it, you just  have to set children and reference children `**slot**` like this (you can set `width`, `height` and `name`):
+For using it, you just  have to set children and reference children **`slot`** like this (you can set `width`, `height` and `name`):
 
 ```
 <widget-wrapper
