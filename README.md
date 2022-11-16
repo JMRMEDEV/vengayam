@@ -31,7 +31,7 @@ https://github.com/JMRMEDEV/vengayam/blob/cb042d39fa795ad77d4b0006acd3dd23663270
 
 **TODO:**
 
-1. Add icon to dahsboard section.
+1. Add icon to dashboard section.
 
 ### WidgetWrapper
 
