@@ -62,6 +62,7 @@ Component that takes a JSON array as an attribute and display month graphics bas
 
 1. Constraint min dimensions to avoid layout messing up.
 2. Filter the cash data by `account` (add `account` property to passed data).
+3. Add icon for no-data message.
 
 Example usage:
 
