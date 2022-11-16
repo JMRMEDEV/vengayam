@@ -64,7 +64,7 @@ Component that takes a JSON array as an attribute and display month graphics bas
 2. Filter the cash data by `account` (add `account` property to passed data).
 3. Add icon for no-data message.
 
-Example usage:
+**Example usage:**
 
 ```
 <cash-in-cash-out
