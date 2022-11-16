@@ -8,9 +8,9 @@ Project to be used inside of Harmony App, based on web components for reusabilit
 
 ## Components
 
-1. [**DashboardComponent.**]()
-2. [**WidgetWrapper.**]()
-3. [**CashInCashOut.**]()
+1. [**DashboardComponent.**](https://github.com/JMRMEDEV/vengayam#dashboardcomponent)
+2. [**WidgetWrapper.**](https://github.com/JMRMEDEV/vengayam#widgetwrapper)
+3. [**CashInCashOut.**](https://github.com/JMRMEDEV/vengayam#cashincashout)
 
 ### DashboardComponent
 
@@ -48,6 +48,11 @@ For using it, you just  have to set children and reference children `**slot**` l
 ### CashInCashOut
 
 Component that takes a JSON array as an attribute and display month graphics based on it. It can focus a specific month and show the scpecific quantities related to it. It sets a maximum and average values based on all the passed data for plotting the information.
+
+**TODO:** 
+
+1. Constraint min dimensions to avoid layout messing up.
+2. Setting case for the scenario where passed last month is not current month.
 
 Example usage:
 
